@@ -1,0 +1,583 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<style>
+
+header{
+	max-width: 100%;
+	color: white;
+	background-color: black;
+	text-align: center;
+	padding: 1em;
+	opacity: 1;
+	}
+	
+	#logo 2 {
+	display: inline-block;
+	padding: 0px;
+	float: left;
+	font-size:20px;
+	line-height: 60px;
+}
+footer {
+	max-width: 100%;
+	color: white;
+	background-color: black;
+	text-align: center;
+	padding: 1em;
+	bottom: 0px;
+	width: 100%;
+}
+</style>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+
+body {
+	background: #fff;
+	font-size: larger;
+	line-height: 32px;
+	color: black;
+	margin: 0;
+	padding: 0;
+	word-wrap: break-word !important;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	}
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	color: #FFF;
+}	
+
+h2 {
+	font-size: 60px;
+	line-height: 34px;
+	text-align: center;
+	color: black;
+}
+
+h3 a {
+	color: #FFF;
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+h1 {
+	margin-top: 100px;
+	text-align: center;
+	font-size: 60px;
+	line-height: 70px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	color: #FFFFFF;
+	}
+
+#container {
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+p {
+	text-align: center;
+	color: black;
+}
+
+.toggle,
+[id^=drop] {
+	display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav { 
+	margin:0;
+	padding: 0;
+	background-color: #212121;
+	max-width: 100%;
+	
+}
+
+#logo {
+	display: inline-block;
+	padding: 0 30px;
+	float: left;
+	font-size: 20px;
+	line-height: 60px;
+	text-align: left;
+}
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+	align: center;
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+	
+/* Positioning the navigation items inline */
+nav ul li {
+	margin: 0px;
+	display: inline-block;
+	float: left;
+	background-color: #212121;
+	color: #FFFFFF;
+	font-size: 36px;
+	}
+
+/* Styling the links */
+nav a {
+	display:block;
+	padding:14px 20px;	
+	color:#FFF;
+	font-size:17px;
+	text-decoration:none;
+}
+
+
+nav ul li ul li:hover { background: #000000; }
+
+/* Background color change on Hover */
+nav a:hover { 
+	background-color: #000000; 
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 60px; 
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */ 
+	left:170px; 
+}
+
+	
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+	#logo {
+	display: block;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+	float: none;
+	color: white;
+	}
+
+	nav {
+		margin: 0;
+	}
+
+	/* Hide the navigation menu by default */
+	/* Also hide the  */
+	.toggle + a,
+	.menu {
+		display: none;
+	}
+
+	/* Stylinf the toggle lable */
+	.toggle {
+		display: block;
+		background-color: #212121;
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px;
+		text-decoration:none;
+		border:none;
+	}
+
+	.toggle:hover {
+		background-color: #000000;
+	}
+
+	/* Display Dropdown when clicked on Parent Lable */
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+
+	/* Change menu item's width to 100% */
+	nav ul li {
+		display: block;
+		width: 100%;
+		}
+
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: #000000;
+	}
+  
+	nav ul li ul li .toggle,
+	nav ul ul a,
+  nav ul ul ul a{
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px; 
+	}
+  
+  
+	nav ul li ul li .toggle,
+	nav ul ul a {
+		background-color: #1E1D1D; 
+	}
+
+	/* Hide Dropdowns by Default */
+	nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+		/* has to be the same number as the "line-height" of "nav a" */
+	}
+		
+	/* Hide menus on hover */
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+		
+	/* Fisrt Tier Dropdown */
+	nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul ul li {
+		position: static;
+		/* has to be the same number as the "width" of "nav ul ul li" */ 
+
+	}
+
+}
+
+@media all and (max-width : 330px) {
+
+	nav ul li {
+		display:block;
+		width: 94%;
+	}
+
+}
+</style>
+<style>
+.parallax {
+	/*The image used */
+	background-image:url(background.jpg);
+	/*set specific height */
+	min-height: 500px;
+	/*create parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+</style>
+<style>
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+#rig {
+	max-width:100%;
+	margin:0 auto; /*center aligned*/
+	padding:0;
+	font-size:0; /* Remember to change it back to normal font size if have captions */
+	list-style:none;
+	background-color: #f1f1f1;
+}
+#rig li {
+	display:inline-block;
+	*display:inline;/*for IE6 - IE7*/
+	width:25%;
+	vertical-align: middle;
+	box-sizing:border-box;
+	margin:0 5px 10px 5px;
+	padding:0;
+}
+
+/* The wrapper for each item */
+.rig-cell {
+	margin:12px;
+	box-shadow:0 1px 4px rgba(0,0,0,0.4);
+	padding:16px;
+	border:none;
+	color:#555;
+	background-color:white;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	position: relative;
+	overflow:hidden;
+}
+
+.rig-cell h3 {
+	font-size:18px;
+	font-family:'Oswald', sans-serif;
+	font-weight:normal;
+}
+
+/* If have the image layer */
+.rig-img {
+	display:block;
+	border:none;
+	width:100%;
+	height:0;
+    padding-top:83.461538%;
+    background-size:cover;
+	background-color:white;
+	background-image:url(../fashion%20website/spritesheet.png);
+    background-repeat:no-repeat;
+	position:relative; /* Make its pseudo :after to be relative to it. */
+}
+.rig-img:after{
+	position:absolute;
+	top:20px;right:20px;bottom:20px;left:20px;
+	border:1px solid #fff;
+	content:'+';
+	color:white;
+	padding-top:14%;
+	font-size:30px;
+	opacity:0;
+	filter:alpha(opacity=0);
+	transition:all 0.3s;
+	transform:scale(0);
+}
+
+#rig li:hover .rig-img:after {
+	opacity:1;
+	transform:scale(1);
+}
+
+/* If have the overlay layer */
+.rig-overlay {
+	position: absolute;
+	display:block;
+	top:0;left:0;bottom:0;right:0;
+	margin:auto;
+	background:white;
+	background-size:50px 50px;
+	opacity:0;
+	filter:alpha(opacity=0);/*For older IE*/
+	transition:all 0.3s;
+}
+#rig li:hover .rig-overlay {
+	opacity:0.5;
+}
+
+@media (max-width: 9000px) {
+	#rig li {width:25%;}
+}
+
+@media (max-width: 800px) {
+	#rig li {width:33.33%;}
+}
+
+@media (max-width: 500px) {
+	#rig li {width:50%;}
+}
+
+@media (max-width: 350px) {
+	#rig li {width:100%;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <div id="logo 2"><img src="logo2.png" style="max-width: 100%"></div>
+  <h1>Oiseau Chanteur<br>
+  </h1>
+</header>
+
+ <nav>
+    <label for="drop" class="toggle"><i class="material-icons">&#xe5d2;</i></label>
+        <input type="checkbox" id="drop" />
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li>
+                    <!-- First Tier Drop Down -->
+                    <label for="drop-1" class="toggle">Tops +</label>
+                    <a href="#">Tops</a>
+                    <input type="checkbox" id="drop-1"/>
+                  <ul>
+                        <li><a href="#">Short-Sleeves</a></li>
+                        <li><a href="#">Blouses</a></li>
+                        <li><a href="#">Sweaters</a></li>
+                  </ul> 
+                </li>
+                <li>
+                <!-- First Tier Drop Down -->
+                <label for="drop-2" class="toggle">Bottoms +</label>
+                <a href="#">Bottoms</a>
+                <input type="checkbox" id="drop-2"/>
+              <ul>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="#">Skirts</a></li>
+                    <li><a href="#">Shorts</a></li>
+                     <!-- Second Tier Drop Down -->                                     
+                    <input type="checkbox" id="drop-3"/>
+                    </li>
+              </ul>
+                </li>
+              <li><a href="#">Dresses</a></li>
+                <li><a href="#">Shoes</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Look Book</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Shopping Cart<i class="material-icons">&#xe8cc;</i></a></li>
+              <li><a href="#"><form><input type="text" name="search" placeholder="Search..">
+              </form>
+                                                       
+  </ul>
+  </nav>
+
+<div class="parallax">
+</div>
+
+<header>
+<h1>Products</h1>
+</header>
+<div class="product gallery">
+<ul id="rig">
+    <li>
+        <a class="rig-cell" href="#">
+            <span class="rig-img" style="background-position:0 0.1%;"></span>
+            <h3>Tops</h3>
+            <span class="rig-overlay"></span>
+        </a>
+    </li>
+    <li>
+        <a class="rig-cell" href="#">
+            <span class="rig-img" style="background-position:0 100.1;"></span>
+            <h3>Bottoms</h3>
+            <span class="rig-overlay"></span>
+        </a>
+    </li>
+    <li>
+        <a class="rig-cell" href="#">
+            <span class="rig-img" style="background-position:0 40%;"></span>
+            <h3>Dresses</h3>
+            <span class="rig-overlay"></span>
+        </a>
+    </li>
+    <li>
+        <a class="rig-cell" href="#">
+            <span class="rig-img" style="background-position:0 60%;"></span>
+            <h3>Blazers</h3>
+            <span class="rig-overlay"></span>
+        </a>
+    </li>
+    <li>
+        <a class="rig-cell" href="#">
+            <span class="rig-img" style="background-position:0 20.1%;"></span>
+            <h3>Coats</h3>
+            <span class="rig-overlay"></span>
+        </a>
+    </li>
+    <li>
+        <a class="rig-cell" href="#">
+            <span class="rig-img" style="background-position:0 80%;"></span>
+            <h3>Shoes</h3>
+            <span class="rig-overlay"></span>
+        </a>
+    </li>
+    <li>
+    <a class="rig-cell" href="#">
+            <span class="rig-img" style="background-position:0 80%;"></span>
+            <h3>Shoes</h3>
+            <span class="rig-overlay"></span>
+        </a>
+    </li>
+    <li>
+    <a class="rig-cell" href="#">
+            <span class="rig-img" style="background-position:0 80%;"></span>
+            <h3>Shoes</h3>
+            <span class="rig-overlay"></span>
+        </a>
+    </li>        
+</ul>
+</div>
+
+
+<article>
+  <h2>Quality</h2>
+  <p>London is the capital city of England.  It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+<p>Standing on the River Thames, London has been a major settlement for two millenia, its history going back to its founding by the Romans, who named it Londinium.</p>
+</article>
+
+<footer>Copyright &copy; W3Schools.com</footer>
+</div>
+</body>
+</html>
